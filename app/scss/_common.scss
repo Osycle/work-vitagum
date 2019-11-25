@@ -5,7 +5,7 @@
 */
 
 $color-1: #fc780e !default;
-$color-2: #fe8900 !default;
+$color-2: #0cae09 !default;
 $color-3: #47901f !default;
 $color-4: #f15045 !default;
 $color-5: #65a328 !default;
@@ -36,9 +36,11 @@ $fs-def: 14;
 	padding-left: 0;
 	padding-right: 0;
 }
-$gradient-1: linear-gradient(to top, #7dba2f, #349a18);
+$gradient-1: linear-gradient(119deg, #2ac532, #119807);
+$gradient-2: linear-gradient(to top, #fcbb1e, #fc6409);
 $gradient-gray-1: linear-gradient(to bottom, #ffffff, #f6f6f6);
 .gradient-1{ background: $gradient-1; }
+.gradient-2{ background: $gradient-2; }
 .gradient-gray-1{ background: $gradient-gray-1; }
 
 
@@ -372,6 +374,7 @@ table {
 .font-family-2{font-family: $font-family-2;}
 .font-family-3{font-family: $font-family-3;}
 
+
 .btn-res{
 	background-color: transparent;
 	border: 0;
@@ -491,7 +494,7 @@ table {
 [class*='boxes-'].owl-carousel {
   margin-left: 0;
   margin-right: 0; }
-  [class*='boxes-'].owl-carousel figure {
+  [class*='boxes-'].owl-carousel figure, [class*='boxes-'].owl-carousel .boxes-cell {
     width: 100%;
     margin-left: 0;
     margin-right: 0; }
@@ -582,7 +585,9 @@ table {
 	}
 }
 
-
+div.btn-style{
+	display: block;
+}
 .btn-style{
 	display: inline-block;
 	white-space: nowrap;
@@ -591,7 +596,7 @@ table {
 	font-family: $font-family-1;
 	font-weight: bold;
 	text-transform: uppercase;
-	border-radius: 7px;
+	border-radius: 30px;
 	&.text-wrap{
 		white-space: wrap;
 	}
@@ -635,7 +640,7 @@ table {
 	transition: all 0.2s ease;
 	position: relative;
 	background-image: $gradient-1;
-	border-bottom: 5px solid rgba(black, 0.05);
+	box-shadow: inset 0 -5px 0 rgba(black, 0.3);
 	*{
 		color: inherit;
 	}
@@ -654,8 +659,9 @@ table {
 		filter: contrast(120%);
 	}
 	&:active{
-		box-shadow: inset 0px 2px 5px 1px rgba(black, 0.2);
+		box-shadow: inset 0px 0px 5px 1px rgba(black, 0.2);
 		border-color: transparent;
+		transform: translateY(2px);
 		//box-shadow: 0 0 20px -2px rgba(black, 0.1);
 	}
 	&.icon-right{
@@ -971,17 +977,23 @@ h1,h2,h3,h4,h5{
 	font-weight: 500;
 	font-family: $font-family-1;
 }
-
+.h1{
+	@extend h1;
+}
 h1, h2, h3, h4{
 	margin-top: 10px;
 	margin-bottom: 10px;
 	position: relative;	
 }
 h1{
-	font-size: em(36);
+	font-size: em(46);
 	margin-bottom: 15px;
+	font-family: $font-family-2;
 	font-weight: 800;
 	line-height: 120%;
+	big{
+
+	}
 	@media (max-width: 991px) {
 		font-size: em(26);
 	}
@@ -990,12 +1002,14 @@ h2{
 	font-size: em(28);
 	margin-bottom: 15px;
 	font-weight: 700;
+	font-family: $font-family-2;
 	@media (max-width: 430px) {
 		font-size: em(23);
 	}
 } 
 h3{
 	font-size: em(20);
+	font-weight: 700;
 	@media (max-width: 430px) {
 		font-size: em(17/1.1);
 	}
@@ -1063,7 +1077,6 @@ main{
 	}
 	
 	p{
-    font-weight: 500;
 		position: relative;
 		line-height: 180%;
 	}
@@ -1122,7 +1135,6 @@ hr{
 	}
 	p{
 		line-height: 200%;
-		text-align: justify;
 		color: $color-gray-5;
 		margin-bottom: 20px;
 		font-weight: 500;
@@ -1131,6 +1143,9 @@ hr{
 		}
 		@media (min-width: 1600){
 			margin-bottom: 30px;
+		}
+		@media (max-width: 991px) {
+			text-align: justify;
 		}
 	}
 }

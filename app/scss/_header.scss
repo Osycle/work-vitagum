@@ -3,7 +3,7 @@
 										 ---HEADER---
 */
 
-$header-top-height: 150px; 
+$header-top-height: 100px; 
 $header-middle-height: 100px; 
 $header-bottom-height: 80px;
 $header-min-menu: 70px;
@@ -107,7 +107,7 @@ $header-min-menu: 70px;
 
 
 .socicons{
-	font-size: 18px;
+	font-size: 12px;
 	text-align: center;
 	.list{
 		margin-top: 15px;
@@ -118,12 +118,39 @@ $header-min-menu: 70px;
 	}
 	li{
 		display: inline-block;
-		margin-left: 15px;
+		margin-left: 10px;
+		box-shadow: 0 5px 5px rgba(black, 0.2);
+		color: $color-2;
+		background-color: white;
 		justify-content: center;
 		text-align: center;
 		font-size: em(16);
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		overflow: hidden;
+		transition: all 0.3s ease-in-out;
+		position: relative;
+		*{
+			z-index: 1;
+		}
+		&:before{
+			@extend .clafclear;
+			left: 0;
+			pointer-events: none;
+			opacity: 0;
+			transition: all 0.3s ease-in-out;
+			top: 0;
+			background-image: $gradient-1;
+		}
 		&:nth-child(1){
 			margin-left: 0;
+		}
+		&:hover{
+			color: white;
+			&:before{
+				opacity: 1;
+			}
 		}
 		a{
 			display: flex;

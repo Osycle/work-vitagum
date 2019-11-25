@@ -18,11 +18,9 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	&>.container{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-height: 675px;
+	hr{
+		margin-top: 60px;
+		border-style: dashed;
 	}
 }
 
@@ -33,19 +31,23 @@
 	background-image: url('../img/bg/feedback.jpg');
 	background-repeat: no-repeat;
 	background-position: bottom right;
-
+	.form-content{
+		form{
+			display: flex;
+			align-items: center;
+			input{
+				margin-right: 15px;
+			}
+		}
+	}
+	.right-block{
+		@extend .shadow-def;
+		background-color: white;
+		padding: 30px 40px;
+		border-radius: 20px;
+	}
 	@media (min-width: 992px){
 		padding-top: 15px;
-	}
-	.bnr-info{
-		position: relative;
-		bottom: auto;
-		left: auto;
-		transform: none;
-		font-size: 0.9em;
-		.icm{
-			color: $color-2;
-		}
 	}
 	.form-content{
 		input{
