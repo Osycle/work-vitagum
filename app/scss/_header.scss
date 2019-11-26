@@ -108,13 +108,15 @@ $header-min-menu: 70px;
 
 .socicons{
 	font-size: 12px;
-	text-align: center;
 	.list{
 		margin-top: 15px;
 		margin-bottom: 15px;
 	}
 	.fa-paper-plane{
 		font-size: em(12);
+	}
+	@media (max-width: 991px) {
+		text-align: center;
 	}
 	li{
 		display: inline-block;
@@ -148,6 +150,7 @@ $header-min-menu: 70px;
 		}
 		&:hover{
 			color: white;
+			transform: translateY(-2px);
 			&:before{
 				opacity: 1;
 			}

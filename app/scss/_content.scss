@@ -463,7 +463,7 @@ figcaption{
 .page-bg{
 	position: absolute;
 	width: 100%;
-	height: 2543px;
+	height: 100%;
 	z-index: -1;
 	background-repeat: no-repeat;
 	background-position:  center -150px;
@@ -485,9 +485,16 @@ figcaption{
 		position: absolute;
 	}
 }
+.block-def{
+	padding: 30px;
+	background-color: white;
+	border-radius: 20px;
+	@extend .shadow-def;
+}
 //intro
 .intro{
 	.desc-content{
+		margin-top: 50px;
 		@media (min-width: 992px){
 			margin-top: 30px;
 		}
@@ -495,7 +502,7 @@ figcaption{
 	.img-content{
 		img{
 			@media (min-width: 992px) {
-				margin-top: -15px;
+				//margin-top: -15px;
 			}
 		}
 	}
@@ -556,6 +563,9 @@ figcaption{
 		border-radius: 15px;
 		background-image: linear-gradient(360deg, white, #f3f3f3);
 		position: relative;
+		@media (min-width: 992px){
+			min-height: 480px;
+		}
 		&:before{
 			@extend .clafclear;
 			border-radius: 18px;
@@ -575,8 +585,7 @@ figcaption{
 			}
 		}
 		h3{
-			font-weight: 0.9em;
-			margin-bottom: 0;
+			margin-bottom: 3px;
 		}
 		p{
 			line-height: 100%;
@@ -598,36 +607,9 @@ figcaption{
 			color: $color-1;
 			margin-bottom: 10px;
 		}
-		[class*="price"]{
-			margin-top: 5px;
-			margin-bottom: 5px;
-		}
-		.price-old{
-			position: relative;
-			display: inline-block;
-			overflow: hidden;
-			padding: 0 10px;
-			&:before{
-				@extend .clafclear;
-				height: 2px;
-				top: 50%;
-				left: 0;
-				border-radius: 5px;
-				transform: rotate(-4deg) translateY(-50%);
-				background-color: red;
-			}
-		}
-		.price-val{
-			font-weight: 900;
-			color: $color-1;
-			font-size: em(20);
-			margin-left: 5px;
-		}
-		.price{
-			display: block;
-			font-size: em(18);
-			*{
-
+		.btn-def{
+			a{
+				text-decoration: none !important;
 			}
 		}
 	}
@@ -635,6 +617,52 @@ figcaption{
 		color: #1e83ff;
 	}
 }
+.list{
+	@media (max-width: 991px){
+		text-align: left;
+	}
+}
+.short-about{
+	@media (min-width: 992px){
+		padding-bottom: 80px;
+	}
+}
+[class*="productions"]{
+	[class*="price"]{
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	.price-old{
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		
+		min-height: 14px;
+		&:before{
+			@extend .clafclear;
+			height: 2px;
+			top: 50%;
+			left: 0;
+			border-radius: 5px;
+			transform: rotate(-4deg) translateY(-50%);
+			background-color: red;
+		}
+	}
+	.price-val{
+		font-weight: 900;
+		color: $color-1;
+		line-height: 95%;
+		font-size: em(20);
+		margin-left: 5px;
+	}
+	.price{
+		display: block;
+		min-height: 30px;
+		font-size: em(18);
+	}
+}
+
+
 
 
 //pa
@@ -664,9 +692,13 @@ figcaption{
 		color: #e5e5e5;
 		font-family: $font-family-2;
 		font-size: em(110);
+
 	}
 	.wrapper{
-		padding: 15px 60px;
+		padding: 30px;
+		@media (min-width: 992px) {
+			padding: 15px 60px;
+		}
 	}
 	figure{
 		@extend .shadow-def;
@@ -723,6 +755,12 @@ figcaption{
 				z-index: -1;
 				transform: skewY(-32deg);
 				line-height: 100%;
+				@media (max-width: 991px) {
+					display: none;
+				}
+			}
+			@media (max-width: 991px) {
+				top: -10px;
 			}
 		}
 		h4{
@@ -738,6 +776,9 @@ figcaption{
 		@media (min-width: 992px){
 			min-height: 700px;
 		}
+	}
+	@media (max-width: 991px){
+		background-image: $gradient-2;
 	}
 	.panel-title{
 		i{
@@ -789,6 +830,9 @@ figcaption{
 }
 .short-news-items{
 	@media (min-width: 992px){
+		.owl-nav{
+			margin-top: -15px;
+		}
 		.owl-stage-outer{
 			width: calc(100% + 30px);
 			left: -15px;
@@ -800,7 +844,8 @@ figcaption{
 	figure{
 		border-radius: 15px;
 		@extend .shadow-def;
-		padding: 20px 30px;
+		background-color: white;
+		padding: 20px 20px;
 	}
 	.img{
 		border-radius: 15px;
@@ -818,5 +863,61 @@ figcaption{
 			padding: 12px 30px;
 			text-transform: none;
 		}
+	}
+}
+
+
+
+//news-article
+.news-article{
+	@media (max-width: 991px){
+		.short-news-items{
+			
+		}
+	}
+	.block-def{
+		@media (min-width: 992px){
+			padding: 60px;
+		}
+		&>h1{
+			margin-top: 0;
+		}
+	}
+}
+
+
+//productions-article
+.productions-article{
+	.block-def{
+		padding: 50px;
+		position: relative;
+		&:before{
+			@extend .clafclear;
+			border: 2px dashed #d7d7d7;
+			top: 0;
+			left: 0;
+			border-radius: 20px;
+			transform: scale(0.97, 0.95);
+			@media (max-width: 991px) {
+				display: none;
+			}
+		}
+		@media (max-width: 991px){
+			padding: 15px;
+		}
+	}
+	.product-img{
+		background-color: #f7f7f7;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 20px;
+		padding: 15px;
+	}
+}
+.product-info{
+	&>h1{
+		font-family: $font-family-1;
+		font-size: em(30);
 	}
 }

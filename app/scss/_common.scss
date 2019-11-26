@@ -417,7 +417,7 @@ table {
 	background-position: center;
 }
 .shadow-def{
-	box-shadow: 0 0 18px -3px rgba(black, 0.2);
+	box-shadow: 0 0 22px -3px rgba(black, 0.2);
 }
 .shadow-box-1{
 	box-shadow: 0 0 20px -3px rgba(black, 0.1);
@@ -612,8 +612,8 @@ div.btn-style{
 			padding-right: 50px;
 		}
 		&:not([class*="p-v"]){
-			padding-top: 20px;
-			padding-bottom: 20px;
+			padding-top: 16px;
+			padding-bottom: 16px;
 		}
 		&:not([class*="flex"]){
 			display: block;
@@ -765,6 +765,7 @@ span.btn-opacity{
 			font-weight: 500;
 			text-align: center;
 			background-color: transparent;
+			border-radius: 50%;
 			transition: all 0.3s ease;
 			//border: 1px solid $color-gray-1;
 			a{
@@ -781,9 +782,9 @@ span.btn-opacity{
 				}
 			}
 			&.active{
-				background-color: $color-1;
+				background-color: $color-2;
 				a{
-					background-color: $color-1;
+					background-color: $color-2;
 					color: white;
 				}
 				&:hover{
@@ -945,7 +946,7 @@ hr{
 input:focus, button:focus{
 	outline: transparent;
 }
-b{font-weight: 600;}
+b{font-weight: 800;}
 strong{font-weight: 700;}
 bolder{
 	font-weight: 900;
@@ -1133,7 +1134,16 @@ hr{
 			margin-left: auto;
 		}
 	}
-	p{
+	h1{
+		font-family: $font-family-1;
+		font-size: em(30);
+	}
+	img{
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+	p:not([class*="color-"]){
 		line-height: 200%;
 		color: $color-gray-5;
 		margin-bottom: 20px;
